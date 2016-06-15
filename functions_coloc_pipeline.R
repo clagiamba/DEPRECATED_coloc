@@ -125,9 +125,9 @@ hasChr=ifelse(any(grep("chr",biom.df$CHR))>0, TRUE,FALSE)
                            N = merged.data$N.eqtl, type = "quant", MAF=merged.data$MAF)
          } else {
          # ‘beta’ and ‘varbeta’
-         dataset.biom = list(snp = merged.data$SNPID, beta = merged.data$BETA.biom, varbeta= merged.data$SE.biom,
+         dataset.biom = list(snp = merged.data$SNPID, beta = merged.data$BETA.biom, varbeta= (merged.data$SE.biom)^2,
                          N = merged.data$N.biom, s=merged.data$s1, type = type, MAF=merged.data$MAF)
-         dataset.eqtl = list(snp = merged.data$SNPID, beta = merged.data$BETA.eqtl, varbeta= merged.data$SE.eqtl,
+         dataset.eqtl = list(snp = merged.data$SNPID, beta = merged.data$BETA.eqtl, varbeta= (merged.data$SE.eqtl)^2,
                            N = merged.data$N.eqtl, type = "quant", MAF=merged.data$MAF)
          }
          suppressMessages(capture.output(coloc.res <- coloc.abf(dataset.biom, dataset.eqtl, p12 = p12)))
