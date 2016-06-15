@@ -15,6 +15,7 @@
 #  useBETA  - should BETA and SE be used for coloc, or only PVAL?
 #  outfile   -  name of output file
 
+## Example use: res = coloc.eqtl.biom(eqtl.df=eqtl.df, biom.df=biom.df, p12=1e-6, useBETA=TRUE, outfile="summary.csv")
 coloc.eqtl.biom <- function(eqtl.df, biom.df, p12=1e-6, useBETA=TRUE, outfile) {
 
 suppressPackageStartupMessages({
